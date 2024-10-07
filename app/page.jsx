@@ -1,15 +1,11 @@
-import { useState } from "react";
+import ReactButton from './react-button';
 
 function Header({ title }) {
   return <h1>{title ? title : "Missing title!"}</h1>;
 }
 
-function HomePage() {
-  const [reactions, setReactions] = useState(0);
+export default function HomePage() {
   const names = ["Ada Lovelace", "Grace Hopper", "Margaret Hamilton"];
-  function handleClick() {
-    setReactions(reactions + 1);
-  }
 
   return (
     <div>
@@ -19,9 +15,9 @@ function HomePage() {
           <li key={name}>{name}</li>
         ))}
       </ul>
-      <button onClick={handleClick}>React({reactions})</button>
+      <ReactButton />
     </div>
   );
 }
 
-root.render(<HomePage />);
+// root.render(<HomePage />);
