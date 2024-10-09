@@ -1,3 +1,6 @@
+const { addIconSelectors, addDynamicIconSelectors } = require('@iconify/tailwind');
+const defaultTheme = require('tailwindcss/defaultTheme')
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
@@ -14,7 +17,13 @@ module.exports = {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      fontFamily: {
+        'sans': ['"Georgia"', ...defaultTheme.fontFamily.sans],
+      }
     },
   },
-  plugins: [],
+  plugins: [
+    addDynamicIconSelectors(),
+    addIconSelectors(['mdi', 'mdi-light']),
+  ],
 }

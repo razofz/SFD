@@ -1,45 +1,40 @@
-import ReactButton from "./react-button";
 import Header from "./header";
 
 import "./global.css";
-
-function HeaderFoo({ title }) {
-  return (
-    <h1 className="text-3xl font-bold text-slate-200 bg-clip-text text-transparent bg-gradient-to-br from-orange-400 to-green-800">
-      {title ? title : "Missing title!"}
-    </h1>
-  );
-}
+import { lusitana } from '@/app/fonts';
 
 export default function HomePage() {
-  const names = ["Ada Lovelace", "Grace Hopper", "Margaret Hamilton"];
 
   return (
-    <div className="flex min-h-screen flex-col">
-      <div>
-        {/* <div className="flex h-20 items-center rounded-lg p-6 md:h-32 place-content-center m-0 bg-gradient-to-br from-green-900"> */}
-          {/* <HeaderFoo title="sobj-creator-2000" /> */}
-          <Header title="SFD" />
-        {/* </div> */}
-        <div className="flex py-5 px-40 content-center justify-center">
-          <h2>Easy processing of RNA-seq data!</h2>
-          {/* <p className="container mx-auto first-letter:text-7xl first-letter:font-bold first-letter:mr-3 first-letter:float-left first-line:uppercase first-line:tracking-widest">
-            Lorem ipsum dolor sit amet consectetur adipiscing elit integer urna
-            ut nunc rhoncus tortor augue aliquet duis curabitur efficitur
-            egestas vehicula nostra semper. Lorem eros quis nibh nec conubia
-            ultricies ante tristique rhoncus porta dolor tempus viverra quisque
-            curae sociosqu class. Vivamus purus parturient cubilia enim senectus
-            inceptos leo quam ut orci netus mollis non magnis nunc lacinia ante
-            montes aenean nascetur erat dapibus velit primis.
-          </p>
-          <ul className="list-disc list-inside m-5 marker:text-emerald-900 text-slate-300">
-            {names.map((name) => (
-              <li key={name}>{name}</li>
-            ))}
-          </ul>
-          <ReactButton /> */}
+    <div className="flex flex-col">
+      <Header title="SFD" />
+      <main className="flex flex-col min-h-screen justify-center items-center">
+        <h1 className={`${lusitana.className} flex my-5`}>Easy processing of RNA-seq data!</h1>
+        <p className="flex my-5">Upload mtx, h5, AnnData files etc.</p>
+        <p className="flex my-5">Instructions for converting from raw data</p>
+        <div className="flex flex-row w-1/2 my-5 space-x-5 place-content-center">
+          <div className="flex flex-col place-items-center">
+            <span className="flex icon-[fluent-mdl2--timeline-matrix-view] text-green-500 text-5xl"></span>
+            <p className="flex">Matrices</p>
+          </div>
+          <span className="icon-[maki--arrow] text-slate-400 text-5xl"></span>
+          <div className="flex flex-col place-items-center">
+            <span className="flex icon-[fluent-mdl2--processing-run] text-green-500 text-5xl"></span>
+            <p className="flex">Filtering</p>
+          </div>
+          <span className="icon-[maki--arrow] text-slate-400 text-5xl"></span>
+          <div className="flex flex-col place-items-center">
+            <span className="icon-[fluent-mdl2--bar-chart-vertical-filter-solid] text-green-500 text-5xl"></span>
+            <p className="flex">Processing</p>
+          </div>
+          <span className="icon-[maki--arrow] text-slate-400 text-5xl"></span>
+          <div className="flex flex-col place-items-center">
+            <span className="flex icon-[fluent--data-scatter-20-filled] text-green-500 text-5xl"></span>
+            <p className="flex">Visualisation</p>
+          </div>
         </div>
-      </div>
+        <button className="bg-gray-700 rounded-md shadow-lg border-2 hover:bg-gray-800 p-2 my-5">Start</button>
+      </main>
     </div>
   );
 }
