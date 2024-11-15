@@ -9,9 +9,11 @@ const Header = ({ title }) => {
 
   return (
     <header className="flex h-10 justify-start items-center p-6 md:h-20 place-content-center m-0 bg-gradient-to-b from-green-900">
-      <h1 className="text-3xl font-bold text-slate-300 bg-clip-text font-serif">
-        {title ? title : "Missing title!"}
-      </h1>
+      <Link href="/">
+        <h1 className="text-3xl font-bold text-slate-300 bg-clip-text font-serif drop-shadow-2xl hover:text-slate-400">
+            {title ? title : "Missing title!"}
+        </h1>
+      </Link>
       <nav className="px-3 content-center justify-center">
         {links.map((link, index) => (
             <Link key={index} href={link.href} className="mx-3 text-slate-400">

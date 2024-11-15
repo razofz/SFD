@@ -2,6 +2,7 @@ import Header from "./header";
 
 import "./global.css";
 import { lusitana } from '@/app/fonts';
+import Link from "next/link";
 
 export default function HomePage() {
 
@@ -33,7 +34,9 @@ export default function HomePage() {
             <p className="flex">Visualisation</p>
           </div>
         </div>
-        <button className="bg-gray-700 rounded-md shadow-lg border-2 hover:bg-gray-800 p-2 my-5">Start</button>
+        <Link href="/startingpoint">
+          <button className="bg-gray-700 rounded-lg shadow-lg border-2 hover:bg-gray-800 py-1.5 px-4 my-5">Start</button>
+        </Link>
       </main>
     </div>
   );
